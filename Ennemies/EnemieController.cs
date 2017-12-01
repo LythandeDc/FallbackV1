@@ -29,7 +29,7 @@ public class EnemieController : MonoBehaviour
         Anim = GetComponent<Animator> (); // on récupère l'animation de l'ennemi
         Anim.SetBool("attack", false);
         Anim.SetBool("walk", false);
-        GetComponent<AudioSource>().volume = 0.4f;
+        GetComponent<AudioSource>().volume = 0.8f;
     }
 	
 	// Mise à jour par frame
@@ -96,15 +96,14 @@ public class EnemieController : MonoBehaviour
             Anim.SetBool("attack", false);
             Anim.SetBool("walk", false);
 
-            if (SoundDead != null)
-            {
-                GetComponent<AudioSource>().PlayOneShot(SoundDead); // Son du dead
-            }
-
             if (enemieLife == 0)
             {
                 Anim.SetTrigger("dead"); // trigger dead
                 dead = true;
+
+                if (SoundDead != null && GetComponent<AudioSource>().isPlaying == false)
+                    GetComponent<AudioSource>().PlayOneShot(SoundDead); // Son du dead
+
                 // GetComponent<EnemieController>().enabled = false; // on desactive le script pour que l'enemie ne marche plus
                 GetComponent<BoxCollider2D>().enabled = false; // on desactive le box collider pour ne pas marcher sur la tete de l'ennemi
                 GetComponent<Rigidbody2D>().isKinematic = true; // ça désactive le collider mais le perso reste à la meme place

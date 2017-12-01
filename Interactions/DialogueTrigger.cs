@@ -30,6 +30,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             if(target.GetComponent<PlayerController>().isTalking == true)
             {
+                Debug.Log(target.transform.position.y + they);
                 mRectTransform.anchoredPosition = new Vector2(target.transform.position.x + thex, target.transform.position.y + they);
             }
         }
@@ -45,7 +46,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             FindObjectOfType<DialogueManager>().anim.SetBool("isOpen", false);
             FindObjectOfType<DialogueManager>().isOpen = false;
-            target.GetComponent<PlayerController>().isTalking = false;
+            FindObjectOfType<DialogueManager>().canTalk = true;
         }
     }
 }

@@ -19,6 +19,7 @@ public class SaveInformation
         PlayerPrefs.SetInt("AGILITY", GameInformation.Agility);
         PlayerPrefs.SetInt("RESISTANCE", GameInformation.Resistance);
 
+        PlayerPrefs.SetInt("LIVES", GameInformation.Lives);
         PlayerPrefs.SetFloat("HEALTH", GameInformation.Health);
 
         PlayerPrefs.SetInt("GOLD", GameInformation.Gold);

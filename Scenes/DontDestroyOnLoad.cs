@@ -7,20 +7,23 @@ public class DontDestroyOnLoad : MonoBehaviour
 {
     public bool canDestroy = true;
     public string levelDestroy = "Intro";
+    public string levelOk = "CharacterCreation";
+    public string menuname = "Menu";
+    Scene scene;
 
-	/// <summary>
+    /// <summary>
     /// AWAKE
     /// </summary>
-	void Awake ()
+    void Awake ()
     {
         DontDestroyOnLoad(transform.gameObject);
     }
 
     void Update()
     {
-        Scene scene = SceneManager.GetActiveScene();
+        scene = SceneManager.GetActiveScene();
 
-        if (canDestroy && scene.name == levelDestroy)
+        if (canDestroy && scene.name != menuname && canDestroy && scene.name != levelOk)
             Destroy(transform.root.gameObject);
     }
 }

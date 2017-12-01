@@ -50,7 +50,11 @@ public class PlayerInterface : MonoBehaviour
         thePlayer = FindObjectOfType<PlayerController>();
         objectsToReset = FindObjectsOfType<ResetOnRespawn>();
 
-        currentLives = startingLives;
+        if (GameInformation.Lives == 0)
+            currentLives = startingLives;
+        else
+            currentLives = GameInformation.Lives;
+
         livesText.text = "Lives x " + currentLives;
     }
 
@@ -136,7 +140,7 @@ public class PlayerInterface : MonoBehaviour
     {
         RemoveLives(1);
 
-        if (currentLives >= 0)
+        if (currentLives > 0)
         {
             StartCoroutine(RespawnCo());
         }

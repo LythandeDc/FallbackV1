@@ -65,6 +65,9 @@ public class PlayerController : MonoBehaviour
         else
             tmpLevel = 1;
 
+        if (GameInformation.CurrentXP > tmpxp)
+            tmpxp = GameInformation.CurrentXP;
+
 
         int maxlevel = 100;
         Levels = new int[maxlevel]; /* Level is an array of 100 integers */

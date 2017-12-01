@@ -189,14 +189,16 @@ public class DisplayCreatePlayerFunctions
             {
                 GameInformation.LevelToLoad = "Level1";
 
-                if((playerFirstName != "Enter first name" && playerLastName != "Enter last name") ||
-                   (playerFirstName != null && playerLastName != null))
+                //  (playerFirstName != null && playerLastName != null)
+                if (playerFirstName != "Enter first name" && playerLastName != "Enter last name")
                     GameInformation.PlayerName = playerFirstName + " " + playerLastName;
                 else
                     GameInformation.PlayerName = "Ayduin" + " " + "Bouldersworn";
 
                 thestring = classSelectionName[classSelection];
                 GameInformation.PlayerLevel = 1;
+                GameInformation.Gold = 0;
+                GameInformation.CurrentXP = 0;
                 GameInformation.CharacterClassName = thestring;
 
                 
@@ -209,7 +211,8 @@ public class DisplayCreatePlayerFunctions
                     GameInformation.IsMale = false;
                 }
 
-                if (playerBio != "Enter Player Bio" || playerBio != null)
+                // playerBio != null
+                if (playerBio != "Enter Player Bio")
                     GameInformation.PlayerBio = playerBio;
                 else
                     GameInformation.PlayerBio = "A great hero";

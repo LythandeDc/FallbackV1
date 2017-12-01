@@ -19,7 +19,8 @@ public class LoadInformation
         GameInformation.Strength = PlayerPrefs.GetInt("STRENGTH");
         GameInformation.Agility = PlayerPrefs.GetInt("AGILITY");
         GameInformation.Resistance = PlayerPrefs.GetInt("RESISTANCE");
-       
+
+        GameInformation.Lives = PlayerPrefs.GetInt("LIVES");
         GameInformation.LevelToLoad = PlayerPrefs.GetString("LEVELTOLOAD");
 
         GameInformation.Gold = PlayerPrefs.GetInt("GOLD");

@@ -51,6 +51,7 @@ public class EndPointScript : MonoBehaviour
         GameInformation.Gold = GameObject.Find("Player").GetComponent<PlayerController>().TheGold();
         GameInformation.CurrentXP = GameObject.Find("Player").GetComponent<PlayerController>().tmpxp;
         GameInformation.Health = GameObject.Find("InterfaceCanvas").GetComponent<PlayerInterface>().Health;
+        GameInformation.Lives = GameObject.Find("InterfaceCanvas").GetComponent<PlayerInterface>().currentLives;
         GameInformation.PlayerLevel = GameObject.Find("Player").GetComponent<PlayerController>().tmpLevel;
         SaveInformation.SaveAllInformation();
 

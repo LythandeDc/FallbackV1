@@ -24,6 +24,7 @@ public class GameInformation : MonoBehaviour
     public static int Strength { get; set; }
     public static int Agility { get; set; }
     public static int Resistance { get; set; }
+    public static int Lives { get; set; }
 
     public static int Gold { get; set; }
     public static float Health { get; set; }
